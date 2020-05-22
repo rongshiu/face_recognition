@@ -1,24 +1,11 @@
-
-# coding: utf-8
-
-# In[1]:
-
-
 import cv2
 import numpy as np
 import os
 from PIL import Image
 
-
-# In[2]:
-
-
 FaceDetect=cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 cam=cv2.VideoCapture(0)
 ID=1
-
-
-# In[3]:
 
 
 def capture():
@@ -39,9 +26,6 @@ def capture():
     cam.release()
     cv2.destroyAllWindows()
 capture()
-
-
-# In[4]:
 
 
 recognizer=cv2.face.LBPHFaceRecognizer_create()
