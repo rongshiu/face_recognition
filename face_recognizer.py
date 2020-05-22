@@ -1,15 +1,5 @@
-
-# coding: utf-8
-
-# In[1]:
-
-
 import cv2
 import numpy as np
-
-
-# In[2]:
-
 
 FaceDetect=cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 cam=cv2.VideoCapture(0)
@@ -17,10 +7,6 @@ rec=cv2.face.LBPHFaceRecognizer_create()
 rec.read('recognizer\\trainingData.yml')
 ID=0
 font=cv2.FONT_HERSHEY_SIMPLEX
-
-
-# In[3]:
-
 
 name1=input('Please Enter Name of person ID=1: ')
 
