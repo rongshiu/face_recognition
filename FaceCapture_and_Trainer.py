@@ -3,11 +3,12 @@ import numpy as np
 import os
 from PIL import Image
 
+# Use haarcascade for face detection
 FaceDetect=cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 cam=cv2.VideoCapture(0)
 ID=1
 
-
+# Function for 100 Webcam Image Capturing 
 def capture():
     SampleNum=0
     while(True):
@@ -27,10 +28,11 @@ def capture():
     cv2.destroyAllWindows()
 capture()
 
-
+# Use LBPHFaceRecognizer for image processing
 recognizer=cv2.face.LBPHFaceRecognizer_create()
 path='DataSet'
 
+# Train Images according to Captured Images Stored in path, generate yml output
 def GetImageID(path):
     ImagePaths=[os.path.join(path,f) for f in os.listdir(path)]
     faces=[]
